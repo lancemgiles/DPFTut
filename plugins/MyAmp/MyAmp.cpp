@@ -18,6 +18,20 @@ class MyAmp : public Plugin {
       return d_cconst('M','A','D','T'); // My Amp Dpf Tutorial
     }
 
+    void initParameter (uint32_t index, Parameter& parameter) override {
+      switch (index) {
+        case kGain:
+          parameter.name = "Gain";
+          parameter.symbol = "gain";
+          parameter.ranges.def = 1.0f;
+          parameter.ranges.min = 0.0f;
+          parameter.ranges.max = 2.0f;
+          break;
+        default:
+          break;
+      }
+    }
+
   private:
     float gain;
 
