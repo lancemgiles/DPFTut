@@ -2,11 +2,11 @@
 #include "DistrhoPluginInfo.h"
 #include <cstdint>
 
-START_NAMESPACE_DISTRHO
+USE_NAMESPACE_DISTRHO
 
 class MyAmp : public Plugin {
   public:
-    MyAmp() : Plugin(kParameterCount, 0, 0), gain(1.0) {}
+    MyAmp() : Plugin(kParametersCount, 0, 0), gain(1.0) {}
 
   protected:
     const char *getLabel() const override { return "MyAmp"; }
@@ -20,7 +20,7 @@ class MyAmp : public Plugin {
       return d_cconst('M','A','D','T'); // My Amp Dpf Tutorial
     }
 
-    void initParameter (uint32_t index, Parameter& parameter) override {
+    void initParameter (uint32_t index, Parameter &parameter) override {
       switch (index) {
         case kGain:
           parameter.name = "Gain";
@@ -69,5 +69,3 @@ class MyAmp : public Plugin {
 }
 
 Plugin *createPlugin() { return new MyAmp(); }
-
-END_NAMESPACE_DISTRHO

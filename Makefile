@@ -21,7 +21,7 @@ ifeq ($(MACOS), true)
 	@$(CURDIR)/dpf/utils/generate-vst-bundles.sh
 endif
 
-dpfutils/lv2_ttl_generator:
+dpf/utils/lv2_ttl_generator:
 	$(MAKE) -C dpf/utils/lv2-ttl-generator
 else
 gen:
