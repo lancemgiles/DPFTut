@@ -11,7 +11,7 @@
 
 enum Parameters {
   kGain,
-  kParameterCounter
+  kParameterCount
 };
 
 #endif
