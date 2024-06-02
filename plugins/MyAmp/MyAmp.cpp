@@ -32,6 +32,25 @@ class MyAmp : public Plugin {
       }
     }
 
+    float getParameterValue(uint32_t index) const override {
+      switch (index) {
+        case kGain:
+          return gain;
+        default:
+          return 0.0;
+      }
+    }
+
+    void setParameterValue(uint32_t index, float value) override {
+      switch (index) {
+        case kGain:
+          gain = value;
+          break;
+        default:
+          break;
+      }
+    }
+
   private:
     float gain;
 
