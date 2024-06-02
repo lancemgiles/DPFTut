@@ -1,4 +1,6 @@
 #include "DistrhoPlugin.hpp"
+#include "DistrhoPluginInfo.h"
+#include <cstdint>
 
 START_NAMESPACE_DISTRHO
 
