@@ -8,17 +8,23 @@ all: dgl plugins gen
 
 dgl:
 ifeq ($(HAVE_OPENGL), true)
-	$(MAKE) all -C dpf/dgl HAVE_OPENGL
+	$(MAKE) -C dpf/dgl opengl
 endif
 
 plugins: dgl
 	$(MAKE) all -C plugins/$(PLUGIN)
 
 ifneq ($(CROSS_COMPILING), true)
-gen: plugins dpf/utils/lv2-ttl-generator
+gen: plugins dpf/utils/lv2_ttl_generator
 	@$(CURDIR)/dpf/utils/generate-ttl.sh
 ifeq ($(MACOS), true)
 	@$(CURDIR)/dpf/utils/generate-vst-bundles.sh
+endif
+
+dpfutils/lv2_ttl_generator:
+	$(MAKE) -C dpf/utils/lv2-ttl-generator
+else
+gen:
 endif
 
 clean:
