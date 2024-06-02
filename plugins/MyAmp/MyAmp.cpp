@@ -51,6 +51,15 @@ class MyAmp : public Plugin {
       }
     }
 
+    void run(const float **inputs, float **outputs, uint32_t frames) override {
+      const float *const in = inputs[0];
+      float *const out = outputs[0];
+
+      for (uint32_t i = 0; i < frames; i++) {
+        out[i] = in[i] * gain;
+      }
+    }
+
   private:
     float gain;
 
