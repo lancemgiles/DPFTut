@@ -8,4 +8,10 @@
 #define DISTRHO_PLUGIN_NUM_OUTPUTS 1
 #define DISTRHO_PLUGIN_IS_RT_SAFE 1
 
+
+enum Parameters {
+  kGain,
+  kParameterCounter
+};
+
 #endif
