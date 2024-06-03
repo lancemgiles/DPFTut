@@ -1,1 +1,4 @@
 build/MyAmp/MyAmp.cpp.d
+build/MyAmp/DistrhoPluginMain_VST2.cpp.d
+build/MyAmp/DistrhoPluginMain_VST2.cpp.o
+build/MyAmp/MyAmp.cpp.o
